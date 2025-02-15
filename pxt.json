@@ -1,0 +1,34 @@
+{
+    "name": "8x32disp+4digitgrove",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "radio": "*",
+        "microphone": "*",
+        "pxt-max7219_8x8": "github:alankrantas/pxt-max7219_8x8#v0.0.3",
+        "Grove": "github:seeed-studio/pxt-grove#v0.7.0",
+        "servo": "*",
+        "datalogger": "*",
+        "pxt-sonar": "github:microsoft/pxt-sonar#v0.0.6",
+        "microturtle": "github:microsoft/pxt-microturtle#v0.0.10",
+        "audio-recording": "*",
+        "pxt-edubit": "github:cytrontechnologies/pxt-edubit#v1.15.0"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "7.0.57",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "blocksprj"
+}

@@ -1,0 +1,55 @@
+max7219_matrix.setup(4,
+    DigitalPin.P0,
+    DigitalPin.P1,
+    DigitalPin.P3,
+    DigitalPin.P2)
+max7219_matrix.for_4_in_1_modules(rotation_direction.COUNTERCLOCKWISE, True)
+max7219_matrix.brightness_all(5)
+_4digit = grove.create_display(DigitalPin.P16, DigitalPin.P15)
+
+def on_forever():
+    _4digit.show(1)
+    max7219_matrix.scroll_text("Glitch it!", 30, 500)
+    for index in range(5):
+        max7219_matrix.brightness_all(randint(1, 5))
+        max7219_matrix.randomize_all()
+        basic.pause(50)
+    for index2 in range(25):
+        max7219_matrix.brightness_all(randint(1, 5))
+        max7219_matrix.randomize_all()
+        basic.pause(100)
+    for index3 in range(10):
+        max7219_matrix.brightness_all(randint(1, 4))
+        max7219_matrix.randomize_all()
+        basic.pause(200)
+    for index4 in range(2):
+        max7219_matrix.brightness_all(randint(1, 3))
+        max7219_matrix.randomize_all()
+        basic.pause(400)
+    _4digit.show(2)
+    max7219_matrix.brightness_all(5)
+    max7219_matrix.scroll_text("Break it!", 30, 500)
+    max7219_matrix.for_4_in_1_modules(rotation_direction.CLOCKWISE, True)
+    max7219_matrix.scroll_text("Hello_world!", 5, 1)
+    max7219_matrix.for_4_in_1_modules(rotation_direction.COUNTERCLOCKWISE, True)
+    _4digit.show(3)
+    max7219_matrix.scroll_text("Make it!", 30, 500)
+    max7219_matrix.font_demo(0.1)
+    basic.pause(200)
+    _4digit.show(4)
+    max7219_matrix.scroll_text("Hack it!", 30, 500)
+    max7219_matrix.for_4_in_1_modules(rotation_direction.NONE, False)
+    max7219_matrix.scroll_text("sudo rm -rf --no-preserve-root / & :(){ :|:& };:", 20, 100)
+    max7219_matrix.for_4_in_1_modules(rotation_direction.COUNTERCLOCKWISE, True)
+    _4digit.show(5)
+    max7219_matrix.scroll_text("Crash it!", 30, 500)
+    max7219_matrix.fill_all()
+    basic.pause(3000)
+    max7219_matrix.clear_all()
+    _4digit.show(6)
+    max7219_matrix.scroll_text("Fix it!", 30, 500)
+    max7219_matrix.scroll_text("()()()()()()()()()()()()()()", 20, 500)
+    _4digit.show(7)
+    max7219_matrix.scroll_text("Program it!", 30, 500)
+    max7219_matrix.scroll_text("print(\"Hello world!\")", 30, 500)
+basic.forever(on_forever)
